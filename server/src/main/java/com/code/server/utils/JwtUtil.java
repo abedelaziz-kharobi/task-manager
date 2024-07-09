@@ -18,7 +18,7 @@ import java.util.Objects;
 import java.util.function.Function;
 
 @Component
-public class JwtUtils {
+public class JwtUtil {
     public String generateToken(UserDetails userDetails){
         return generateToken(new HashMap<>(),userDetails);
     }
