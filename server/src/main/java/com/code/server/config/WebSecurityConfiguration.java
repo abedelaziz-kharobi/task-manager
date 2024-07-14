@@ -23,10 +23,14 @@ import static org.springframework.security.config.http.SessionCreationPolicy.STA
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity
-@RequiredArgsConstructor
 public class WebSecurityConfiguration {
-    private JwtAuthenticationFilter jwtAuthenticationFilter;
-    private UserService userService;
+    private final JwtAuthenticationFilter jwtAuthenticationFilter;
+    private final UserService userService;
+
+    public WebSecurityConfiguration(JwtAuthenticationFilter jwtAuthenticationFilter, UserService userService) {
+        this.jwtAuthenticationFilter = jwtAuthenticationFilter;
+        this.userService = userService;
+    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
