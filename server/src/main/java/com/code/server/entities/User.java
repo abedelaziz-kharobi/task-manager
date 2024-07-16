@@ -1,5 +1,6 @@
 package com.code.server.entities;
 
+import com.code.server.dto.UserDto;
 import com.code.server.enums.UserRole;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -73,4 +74,15 @@ public class User implements UserDetails {
     public void setUserRole(UserRole userRole) {
         this.userRole = userRole;
     }
+
+    public UserDto getUserDto(){
+        UserDto userDto = new UserDto();
+        userDto.setId(id);
+        userDto.setName(name);
+        userDto.setEmail(email);
+        userDto.setUserRole(userRole);
+
+        return userDto;
+    }
+
 }
