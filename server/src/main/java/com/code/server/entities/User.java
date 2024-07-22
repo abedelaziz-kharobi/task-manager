@@ -24,6 +24,7 @@ public class User implements UserDetails {
     private String email;
     private String password;
     private UserRole userRole;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(userRole.name()));
@@ -31,12 +32,28 @@ public class User implements UserDetails {
 
     @Override
     public String getPassword() {
-        return null;
+        return password;
     }
 
     @Override
     public String getUsername() {
         return email;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public UserRole getUserRole() {
+        return userRole;
     }
 
     @Override
@@ -75,7 +92,7 @@ public class User implements UserDetails {
         this.userRole = userRole;
     }
 
-    public UserDto getUserDto(){
+    public UserDto getUserDto() {
         UserDto userDto = new UserDto();
         userDto.setId(id);
         userDto.setName(name);
@@ -84,5 +101,4 @@ public class User implements UserDetails {
 
         return userDto;
     }
-
 }
