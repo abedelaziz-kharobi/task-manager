@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterLinkActive, RouterModule, RouterOutlet } from '@angular/router';
-import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
 import { MaterialModule } from './demo-material-module';
 import { LoginComponent } from './auth/components/login/login.component';
+import { SignupComponent } from './auth/components/signup/signup.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +14,8 @@ import { LoginComponent } from './auth/components/login/login.component';
     CommonModule,
     MaterialModule,
     RouterModule,
+    LoginComponent,
+    SignupComponent,
 
   ],
 
