@@ -3,4 +3,7 @@ This project is a full-stack application built with Angular and Spring Boot. The
 
 ## Project Structure 
 ```
+task-manager/
+├── client/   # Angular frontend
+└── server/   # Spring Boot backend
 ```
