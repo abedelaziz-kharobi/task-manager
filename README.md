@@ -7,3 +7,10 @@ task-manager/
 ├── client/   # Angular frontend
 └── server/   # Spring Boot backend
 ```
+
+## Frontend: Angular
+### Step 1: Create a new Angular project
+first, we create the skeleton of the Angular project with routing and CSS
+```
+ng new client --routing --style=css
+```
